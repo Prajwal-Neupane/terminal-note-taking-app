@@ -1,5 +1,5 @@
 build:
-	go build -o notes .
+	@go build -o notes .
 
-run:
-	./notes
+run: build
+	@./notes
