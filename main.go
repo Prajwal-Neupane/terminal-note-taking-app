@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/charmbracelet/bubbles/textinput"
 	tea "github.com/charmbracelet/bubbletea"
 )
 
@@ -11,8 +12,17 @@ import (
 
 
 func initializeModel() model {
+
+	// initialize new input file
+	ti := textinput.New()
+	ti.Placeholder = "Name"
+	ti.Focus()
+	ti.CharLimit = 156
+	ti.Width = 20
 	return model {
-		msg: "Hello",
+		newFileInput: ti,
+		visibleInputText: false,
+		
 	}
 }
 

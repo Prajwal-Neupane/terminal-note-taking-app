@@ -16,5 +16,11 @@ func (m model) View() string {
 	welcome := style.Render("Welcome to App 🫶")
 
 	help := helpStyle.Render("Ctrl+N: new file   *   Ctrl+L: list   *   Esc: back/save   *   Ctrl+S: save   *   Ctrl+Q: quit")
-	return fmt.Sprintf("\n%s\n\n%s", welcome,help)
+
+	view := ""
+
+	if m.visibleInputText {
+		view = m.newFileInput.View()
+	}
+	return fmt.Sprintf("\n%s\n\n%s\n\n%s", welcome,view,help)
 }

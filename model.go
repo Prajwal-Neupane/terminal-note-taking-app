@@ -1,5 +1,8 @@
 package main
 
+import "github.com/charmbracelet/bubbles/textinput"
+
 type model struct {
-	msg string
+	newFileInput textinput.Model
+	visibleInputText bool
 }
